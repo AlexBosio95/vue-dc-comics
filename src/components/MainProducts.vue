@@ -1,10 +1,10 @@
 <template>
 
   <div class="ms_container">
-      <div class="container d-flex">
-          <div class="products" v-for="(product, index) in productsList" :key="index">
-              <img :src="'../assets/img/' + product.imageUrl" alt="">
-              <h4 class="fw-bold">{{product.text}}</h4>
+      <div class="container py-5 d-flex align-items-center">
+          <div class="products d-flex m-2 align-items-center" v-for="(product, index) in productsList" :key="index">
+              <img src="../assets/img/buy-comics-digital-comics.png" alt="">
+              <span class="fw-bold">{{product.text}}</span>
           </div>
 
       </div>
@@ -42,19 +42,10 @@ export default {
                     url: '#',
                     text: 'DC POWER VISA'
                 },
-
-            ],
-            indexActive: 0,
+            ]
 
         }
-    },
-    methods: {
-        log: function(index){
-            console.log(index)
-        }
-
     }
-    
 
 }
 </script>
@@ -63,18 +54,20 @@ export default {
 @import "../styles/variabiles.scss";
 
 img{
-    height: 3rem;
+    height: 4rem;
+    margin-right: 0.5rem;
 }
+
+.products{
+    width: calc(100% / 5);
+}
+
 
 div .ms_container{
     background-color: $colorPrimary;
     
 
-    .container{
-        height: 10rem;
-    }
-
-    h4{
+    span{
         color: $textColor;
     }
 }
