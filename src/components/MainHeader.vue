@@ -1,14 +1,16 @@
 <template>
+
 <div class="container">
-    <div class="row">
-        <div class="col">
+    <div class="row row-cols-2 align-items-center">
+        <div class="col-3">
             <img src="../assets/img/dc-logo.png" alt="dc logo">
         </div>
-        <div class="col">
-            <ul>
-                <li v-for="(items, index) in navList" :key="index">{{items.text}}</li>
-            </ul>
-
+        <div class="col-9">
+            <nav>
+                <ul class="d-flex justify-content-end">
+                    <li :class="{'active' : items.active}" v-for="(items, index) in navList" :key="index">{{items.text}}</li>
+                </ul>
+            </nav>
         </div>
 
     </div>
@@ -29,7 +31,7 @@ export default {
                 {
                     text: "COMICS",
                     url: '#',
-                    active: false
+                    active: true
                 },
                 {
                     text: "MOVIES",
@@ -79,7 +81,25 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
+@import "../styles/variabiles.scss";
+
+    img{
+        height: 4.1rem;
+    }
+
+    ul{
+        list-style: none;
+
+            li{
+                margin: 0.5rem;
+            }
+
+    }
+
+    .active{
+        color: $colorPrimary;
+    }
 
 </style>

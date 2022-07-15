@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
 #app {
-@import url('~boostrap/scss/boostrap.scss');
+@import "~bootstrap/scss/bootstrap.scss";
 
 }
 </style>
