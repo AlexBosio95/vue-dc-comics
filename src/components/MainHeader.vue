@@ -1,14 +1,14 @@
 <template>
 
-<div class="container">
+<div class="container mt-3">
     <div class="row row-cols-2 align-items-center">
         <div class="col-3">
             <img src="../assets/img/dc-logo.png" alt="dc logo">
         </div>
         <div class="col-9">
             <nav>
-                <ul class="d-flex justify-content-end">
-                    <li :class="{'active' : items.active}" v-for="(items, index) in navList" :key="index">{{items.text}}</li>
+                <ul class="d-flex justify-content-end m-0">
+                    <li @click="changeActive(index)" class="mb-0 fw-semibold" :class="{'active' : items.active}" v-for="(items, index) in navList" :key="index">{{items.text}} </li>
                 </ul>
             </nav>
         </div>
@@ -76,6 +76,18 @@ export default {
 
             ]
         }
+    },
+    methods: {
+        changeActive: function(currentIndex) {
+
+            for (let i = 0; i < this.navList.length; i++) {
+                this.navList[i].active = false
+            }
+
+            if (!this.navList[currentIndex].active){
+                this.navList[currentIndex].active = true
+            }
+        }
     }
 
 }
@@ -95,6 +107,7 @@ export default {
 
             li{
                 margin: 0.5rem;
+                cursor: pointer;
             }
 
     }
