@@ -39,6 +39,9 @@ export default {
 
 body{
   font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 </style>
