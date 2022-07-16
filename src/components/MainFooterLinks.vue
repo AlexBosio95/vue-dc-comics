@@ -1,21 +1,42 @@
 <template>
   <div class="ms_container">
       <div class="container">
-          <div class="row row-cols-2">
-              <div class="col my-5">
+          <div class="row row-cols-3">
+              <div class="col-5 my-5">
+                  <!-- Link -->
                   <div class="row row-cols-3">
                       <div class="col">
-                          <div>
                             <h4 class="fw-bold">Dc Comics</h4>
-                            <ul>
-                                <li v-for="(link, index) in DcComicList" :key="index">{{link.text}}</li>
+                            <ul class="p-0 mt-4">
+                                <li v-for="(link, index) in dcComicList" :key="index">{{link.text}}</li>
                             </ul>
-                          </div>
+
+                            <h4 class="fw-bold mt-4">Shop</h4>
+                            <ul class="p-0 mt-4">
+                                <li v-for="(link, index) in shopList" :key="index">{{link.text}}</li>
+                            </ul>
+                      </div>
+
+                      <div class="col">
+                            <h4 class="fw-bold">Dc</h4>
+                            <ul class="p-0 mt-4">
+                                <li v-for="(link, index) in utilityList" :key="index">{{link.text}}</li>
+                            </ul>
+                      </div>
+
+                      <div class="col">
+                            <h4 class="fw-bold">Sites</h4>
+                            <ul class="p-0 mt-4">
+                                <li v-for="(link, index) in siteLink" :key="index">{{link.text}}</li>
+                            </ul>
                       </div>
                   </div>
-                  
               </div>
-              <div class="col image">
+
+              <div class="col-2"></div>
+
+              <div class="col-5 image">
+
               </div>
           </div>
       </div>
@@ -28,7 +49,7 @@
 export default {
     data: function(){
         return{
-            DcComicList: [
+            dcComicList: [
                 {
                     text: 'Characters',
                     url: '#'
@@ -57,7 +78,90 @@ export default {
                     text: 'News',
                     url: '#'
                 }
+            ],
+
+            shopList: [
+                {
+                    text: 'Shop DC',
+                    url: '#'
+                },
+                {
+                    text: 'Shop DC Collectibles',
+                    url: '#'
+                }
+            ],
+
+            utilityList: [
+                {
+                    text: 'Terms Of Use',
+                    url: '#'
+                },
+                {
+                    text: 'Privacy policy (New)',
+                    url: '#'
+                },
+                {
+                    text: 'Ad Chalene',
+                    url: '#'
+                },
+                {
+                    text: 'Advertising',
+                    url: '#'
+                },
+                {
+                    text: 'Jobs',
+                    url: '#'
+                },
+                {
+                    text: 'Subscriptions',
+                    url: '#'
+                },
+                {
+                    text: 'Talent Workshone',
+                    url: '#'
+                },
+                {
+                    text: 'CPSC Certificates',
+                    url: '#'
+                },
+                {
+                    text: 'Ratinas',
+                    url: '#'
+                },
+                {
+                    text: 'Shop Help',
+                    url: '#'
+                },
+                {
+                    text: 'Contact Us',
+                    url: '#'
+                }
+            ],
+
+            siteLink: [
+
+                {
+                    text: 'DC',
+                    url: '#'
+                },
+                {
+                    text: 'MAD Magazine',
+                    url: '#'
+                },
+                {
+                    text: 'DC Kids',
+                    url: '#'
+                },
+                {
+                    text: 'DC Universe',
+                    url: '#'
+                },
+                {
+                    text: 'DC Power Visa',
+                    url: '#'
+                }
             ]
+
 
         }
     }
@@ -69,13 +173,20 @@ export default {
 @import "../styles/variabiles.scss";
 
 .col ul{
-
-    list-style: none;
+    padding: 0;
+    list-style-type: none;
 
     li{
         color: $colorLink;
         margin: 10px 0px;
+        cursor: pointer;
+
+        &:hover{
+        color: $textColor;
     }
+    }
+
+    
 }
 
 h4{
@@ -85,13 +196,16 @@ h4{
 
 div .ms_container{
     background-image: url('../assets/img/footer-bg.jpg');
-    height: 40rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .image {
     background-image: url('../assets/img/dc-logo-bg.png');
     overflow: hidden;
-    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 </style>

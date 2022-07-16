@@ -3,8 +3,9 @@
     <MainHeader/>
     <MainBanner/>
     <MainProducts/>
-    <MainFooterInfo/>
     <MainFooterLinks/>
+    <MainFooterInfo/>
+
   </div>
 </template>
 
@@ -22,8 +23,9 @@ export default {
     MainHeader,
     MainBanner,
     MainProducts,
-    MainFooterInfo,
     MainFooterLinks,
+    MainFooterInfo,
+
   }
 }
 </script>
