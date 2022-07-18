@@ -23,19 +23,26 @@ export default {
 div.ms_card{
     width: calc(100% / 6 - 1rem);
     margin: 2rem 0.5rem;
+    cursor: pointer;
 
     img{
         width: 100%;
         height: 200px;
         object-fit: cover;
         object-position: top;
+
+        &:hover{
+            transform: scale(1.05);
+            transition: 0.5s;
+        }
     }
 
+
     h5{
+        margin: 0 0.2rem;
         color: $textColor;
         text-transform: uppercase;
     }
-    
 }
 
 </style>

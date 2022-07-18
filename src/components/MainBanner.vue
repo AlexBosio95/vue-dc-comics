@@ -118,24 +118,19 @@ export default {
 </script>
 
 
-
-
 <style lang="scss" scoped>
 @import "../styles/variabiles.scss";
 
-div .ms_container{
+div.ms_container{
     background-color: $standardBg;
 
     img{
-      height: 23rem;
+      height: 20rem;
       width: 100%;
       object-fit: cover;
     }
 
-    div.wrapper-cards{
-
     h5{
-
       color: $textColor;
       background-color: $colorPrimary;
       padding: 0.7rem 1.6rem;
@@ -144,13 +139,12 @@ div .ms_container{
       text-transform: uppercase;
     }
 
-    div.cards-container{
+    .cards-container{
       padding: 2rem 0rem;
       display: flex;
       flex-wrap: wrap;
     }
 
-    }
 
     .btn-more{
         color: $textColor;
