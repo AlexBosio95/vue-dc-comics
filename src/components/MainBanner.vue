@@ -2,22 +2,36 @@
   <div class="ms_container mt-4">
     
       <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="">
-      <div class="wrapper-cards">
-      <h5>CURRENT SERIES</h5>
+      
+      <div class="container position-relative wrapper-cards">
 
-      <div>
-        
-      </div>
+        <h5>CURRENT SERIES</h5>
+
+        <div class="cards-container">
+            <Card v-for="(card, index) in cards" 
+            :key="index" 
+            :card="card"/>
+        </div>
+
     </div>
     
   </div>
 </template>
 
 <script>
+
+import Card from './Card.vue'
+
 export default {
+
+  name: 'card',
+  components: {
+    Card,
+  },
+
   data: function(){
     return{
-      Cards: [
+      cards: [
           {
             "thumb": "https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX",
             "price": "$19.99",
@@ -107,19 +121,12 @@ div .ms_container{
     background-color: $standardBg;
 
     img{
-      height: 25rem;
+      height: 23rem;
       width: 100%;
       object-fit: cover;
     }
 
     div.wrapper-cards{
-      position: relative;
-      height: 50rem;
-      width: 65%;
-      margin: auto;
-      background-color: white;
-
-
 
     h5{
         color: $textColor;
@@ -128,6 +135,12 @@ div .ms_container{
         position: absolute;
         top: -1.5rem;
         text-transform: uppercase;
+    }
+
+    div.cards-container{
+      padding: 2rem 0rem;
+      display: flex;
+      flex-wrap: wrap;
     }
 
     }
