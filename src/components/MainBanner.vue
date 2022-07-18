@@ -5,7 +5,7 @@
       
       <div class="container position-relative wrapper-cards">
 
-        <h5>CURRENT SERIES</h5>
+        <h5 class="fw-bold">CURRENT SERIES</h5>
 
         <div class="cards-container">
             <Card v-for="(card, index) in cards" 
@@ -13,7 +13,13 @@
             :card="card"/>
         </div>
 
+
     </div>
+
+    <div class="text-center">
+        <button class="btn-more mb-3 fw-bold">LOAD MORE</button>
+    </div>
+
     
   </div>
 </template>
@@ -129,12 +135,13 @@ div .ms_container{
     div.wrapper-cards{
 
     h5{
-        color: $textColor;
-        background-color: $colorPrimary;
-        padding: 0.7rem 1.6rem;
-        position: absolute;
-        top: -1.5rem;
-        text-transform: uppercase;
+
+      color: $textColor;
+      background-color: $colorPrimary;
+      padding: 0.7rem 1.6rem;
+      position: absolute;
+      top: -1.5rem;
+      text-transform: uppercase;
     }
 
     div.cards-container{
@@ -143,6 +150,13 @@ div .ms_container{
       flex-wrap: wrap;
     }
 
+    }
+
+    .btn-more{
+        color: $textColor;
+        background-color: $colorPrimary;
+        padding: 0.7rem 1.6rem;
+        border: none;
     }
 
 }
