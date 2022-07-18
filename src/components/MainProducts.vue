@@ -3,7 +3,7 @@
   <div class="ms_container">
       <div class="container py-5 d-flex align-items-center">
           <div class="products d-flex m-2 align-items-center" v-for="(product, index) in productsList" :key="index">
-              <img src="../assets/img/buy-comics-digital-comics.png" alt="">
+              <img :src="require(`../assets/img/${product.imageUrl}`)" :alt="(product.text)">
               <span class="fw-bold">{{product.text}}</span>
           </div>
 
@@ -28,17 +28,17 @@ export default {
                     text: 'DC MERCHANDISE'
                 },
                 {
-                    imageUrl: "img/buy-comics-shop-locator.png",
+                    imageUrl: "buy-comics-shop-locator.png",
                     url: '#',
                     text: 'SUBSCRIPTION'
                 },
                 {
-                    imageUrl: "img/buy-comics-subscriptions.png",
+                    imageUrl: "buy-comics-subscriptions.png",
                     url: '#',
                     text: 'COMIC SHOP LOCATOR'
                 },
                 {
-                    imageUrl: "img/buy-comics-subscriptions.png",
+                    imageUrl: "buy-dc-power-visa.svg",
                     url: '#',
                     text: 'DC POWER VISA'
                 },
@@ -54,7 +54,7 @@ export default {
 @import "../styles/variabiles.scss";
 
 img{
-    height: 4rem;
+    height: 3.5rem;
     margin-right: 0.5rem;
 }
 
