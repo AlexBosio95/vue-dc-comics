@@ -8,7 +8,13 @@
         <div class="col-9">
             <nav>
                 <ul class="d-flex justify-content-end m-0">
-                    <li @click="changeActive(index)" class="mb-0 fw-semibold" :class="{'active' : items.active}" v-for="(items, index) in navList" :key="index">{{items.text}} </li>
+                    <li @click="changeActive(index)" class="mb-0 fw-semibold" 
+                    :class="{'active' : item.active}" 
+                    v-for="(item, index) in navList" :key="index">
+                        {{item.text}}  
+                        <div v-if="(item.active)" class="nav-mark"></div>
+                    </li>
+                   
                 </ul>
             </nav>
         </div>
@@ -108,6 +114,17 @@ export default {
             li{
                 margin: 0.5rem;
                 cursor: pointer;
+                position: relative;
+            }
+
+            .nav-mark{
+                position: absolute;
+                top: 57px;
+                left: 0;
+                height: 5px;
+                width: 100%;
+                background-color: $colorPrimary;
+
             }
 
     }
